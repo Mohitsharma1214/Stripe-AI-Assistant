@@ -1,0 +1,17 @@
+Refunds
+Refund objects allow you to refund a charge that has previously been created but not yet refunded.
+
+The Refund Object Attributes:
+- id (string): Unique identifier for the object.
+- amount (integer): Amount, in cents.
+- balance_transaction (nullable string): ID of the balance transaction that describes the impact of this refund on your account balance.
+- charge (nullable string): ID of the charge that's being refunded.
+- currency (string): Three-letter ISO currency code.
+- reason (enum): Reason for the refund. One of duplicate, fraudulent, or requested_by_customer.
+- status (string): Status of the refund. For example, succeeded, pending, failed, or canceled.
+
+Main Endpoints:
+- POST /v1/refunds: Create a refund.
+    Parameters: charge, amount, payment_intent, reason, metadata.
+- GET /v1/refunds/:id: Retrieve a refund.
+- GET /v1/refunds: List all refunds.

@@ -1,0 +1,20 @@
+Webhooks
+Webhooks allow you to receive notifications when events occur in your Stripe account.
+
+The Webhook Endpoint Object Attributes:
+- id (string): Unique identifier for the object.
+- api_version (nullable string): The API version events are rendered as for this webhook endpoint.
+- created (timestamp): Time at which the object was created.
+- description (nullable string): An optional description of what the webhook is used for.
+- enabled_events (array of strings): The list of events to enable for this endpoint.
+- secret (string): The endpoint's secret, used for signing webhook payloads.
+- status (string): The status of the webhook endpoint, e.g., enabled or disabled.
+- url (string): The URL and path to which events are sent.
+
+Main Endpoints:
+- POST /v1/webhook_endpoints: Create a webhook endpoint.
+    Parameters: url, enabled_events, api_version, description, metadata.
+- POST /v1/webhook_endpoints/:id: Update a webhook endpoint.
+- GET /v1/webhook_endpoints/:id: Retrieve a webhook endpoint.
+- DELETE /v1/webhook_endpoints/:id: Delete a webhook endpoint.
+- GET /v1/webhook_endpoints: List all webhook endpoints.

@@ -1,0 +1,24 @@
+Charges
+The Charge object represents a single attempt to move money into your Stripe account.
+
+The Charge Object Attributes:
+- id (string): Unique identifier for the object.
+- amount (integer): Amount charged in cents.
+- amount_captured (integer): Amount in cents that was captured.
+- amount_refunded (integer): Amount in cents that was refunded.
+- captured (boolean): If the charge was created without capturing, this becomes true when it is captured.
+- currency (string): Three-letter ISO currency code.
+- customer (nullable string): ID of the customer this charge is for.
+- description (nullable string): An arbitrary string attached to the object.
+- failure_code (nullable string): Error code explaining why a charge failed.
+- failure_message (nullable string): Message to user explaining why a charge failed.
+- paid (boolean): true if the charge succeeded, or was partially refunded.
+- refunded (boolean): Whether the charge has been fully refunded.
+- status (string): The status of the payment is either succeeded, pending, or failed.
+
+Main Endpoints:
+- POST /v1/charges: Create a charge.
+    Parameters: amount, currency, customer, source, description, metadata.
+- POST /v1/charges/:id/capture: Capture an uncaptured charge.
+- GET /v1/charges/:id: Retrieve a charge.
+- GET /v1/charges: List all charges.

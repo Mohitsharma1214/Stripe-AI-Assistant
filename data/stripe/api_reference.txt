@@ -1,0 +1,5 @@
+Stripe API Reference
+Base URL: https://api.stripe.com
+Authentication: sk_test_...
+Versioning: 2026-03-25
+Concepts: Expansions, Idempotency, Metadata, Pagination.

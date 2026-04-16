@@ -1,0 +1,19 @@
+Payment Methods
+PaymentMethod objects represent your customer’s payment instruments. You can use them with PaymentIntents to collect payments or save them to Customer objects to store instrument details for future payments.
+
+The PaymentMethod Object Attributes:
+- id (string): Unique identifier for the object.
+- object (string): Always "payment_method".
+- billing_details (object): Billing information associated with the PaymentMethod.
+- created (timestamp): Time at which the object was created.
+- Type-specific details: (e.g., card, au_becs_debit, bacs_debit, etc.) contains details for that specific payment method type.
+- customer (nullable string): The ID of the Customer to which this PaymentMethod is saved.
+- metadata (nullable object): Set of key-value pairs.
+- type (string): The type of the PaymentMethod.
+
+Main Endpoints:
+- POST /v1/payment_methods: Create a PaymentMethod.
+- GET /v1/payment_methods/:id: Retrieve a PaymentMethod.
+- GET /v1/customers/:id/payment_methods: List a customer's PaymentMethods.
+- POST /v1/payment_methods/:id/attach: Attach a PaymentMethod to a customer.
+- POST /v1/payment_methods/:id/detach: Detach a PaymentMethod from its customer.

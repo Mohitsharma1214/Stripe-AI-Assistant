@@ -1,0 +1,19 @@
+CREATE CUSTOMER
+
+API Endpoint: POST /v1/customers
+
+Description:
+Creates a new customer in Stripe. Stores email, name, and payment details.
+
+Parameters:
+- email (string)
+- name (string)
+
+Example:
+curl https://api.stripe.com/v1/customers \
+  -u sk_test_...: \
+  -d email="customer@example.com" \
+  -d name="John Doe"
+
+Response:
+Returns customer object with id (cus_...), email, and name.

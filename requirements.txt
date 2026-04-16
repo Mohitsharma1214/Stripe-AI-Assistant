@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+openai
+chromadb
+sentence-transformers
+python-dotenv
+tiktoken
+watchfiles

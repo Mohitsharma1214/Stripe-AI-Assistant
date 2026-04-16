@@ -1,0 +1,27 @@
+Payment Intents
+A PaymentIntent guides you through the process of collecting a payment from your customer.
+
+The PaymentIntent Object Attributes:
+- id (string): Unique identifier for the object.
+- object (string): Always "payment_intent".
+- amount (integer): Amount intended to be collected by this PaymentIntent.
+- amount_capturable (integer): Amount that can be captured from this PaymentIntent.
+- amount_received (integer): Amount successfully collected from this PaymentIntent.
+- client_secret (string): The client secret of this PaymentIntent, used to handle confirmation on the client side.
+- currency (string): Three-letter ISO currency code.
+- customer (nullable string): ID of the Customer this PaymentIntent belongs to.
+- description (nullable string): An arbitrary string attached to the object.
+- last_payment_error (nullable object): The payment error encountered in the latest attempt to confirm this PaymentIntent.
+- metadata (object): Set of key-value pairs.
+- next_action (nullable object): If present, this property tells you what sequence of actions your customer needs to take next.
+- payment_method (nullable string): ID of the payment method used in this PaymentIntent.
+- payment_method_types (array of strings): The list of payment method types (e.g., card, us_bank_account) that this PaymentIntent is allowed to use.
+- status (string): Status of this PaymentIntent, one of requires_payment_method, requires_confirmation, requires_action, processing, requires_capture, canceled, or succeeded.
+
+Main Endpoints:
+- POST /v1/payment_intents: Create a PaymentIntent.
+    Parameters: amount, currency, customer, payment_method, description, metadata, confirm.
+- POST /v1/payment_intents/:id/confirm: Confirm that your customer intends to pay.
+- POST /v1/payment_intents/:id/capture: Capture the funds of an existing PaymentIntent.
+- POST /v1/payment_intents/:id/cancel: Cancel a PaymentIntent.
+- GET /v1/payment_intents/:id: Retrieve a PaymentIntent.

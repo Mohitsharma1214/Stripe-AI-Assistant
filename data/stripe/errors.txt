@@ -1,0 +1,16 @@
+Errors
+The Error Object Attributes:
+- type (string): The type of error returned. One of api_error, card_error, idempotency_error, or invalid_request_error.
+- code (string): For some errors that could be handled programmatically, a short string indicating the error code.
+- decline_code (string): For card errors, a short string indicating the reason the card was declined.
+- message (string): A human-readable message providing more details about the error.
+- param (string): If the error is parameter-specific, the parameter related to the error.
+
+HTTP Status Codes:
+- 200 - OK: Everything worked as expected.
+- 400 - Bad Request: The request was unacceptable, often due to missing a required parameter.
+- 401 - Unauthorized: No valid API key provided.
+- 402 - Request Failed: The parameters were valid but the request failed.
+- 404 - Not Found: The requested resource doesn't exist.
+- 429 - Too Many Requests: Too many requests hit the API too quickly.
+- 500, 502, 503, 504 - Server Errors: Something went wrong on Stripe's end.
