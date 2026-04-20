@@ -7,3 +7,5 @@ sentence-transformers
 python-dotenv
 tiktoken
 watchfiles
+langchain
+langchain-text-splitters
